@@ -1,0 +1,5 @@
+cryptography>=42.0.0
+argon2-cffi>=23.1.0
+click>=8.1.7
+colorama>=0.4.6
+tqdm>=4.66.1
