@@ -1,6 +1,8 @@
 """
 CipherForge - Cryptographic Core Module
-Handles ChaCha20-Poly1305 encryption and decryption operations
+
+Handles ChaCha20-Poly1305 authenticated encryption and decryption operations.
+Implements secure container format for encrypted data with version management.
 """
 
 import os
