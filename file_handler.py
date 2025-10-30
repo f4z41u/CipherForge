@@ -1,6 +1,8 @@
 """
 CipherForge - File Handler Module
-Handles file encryption/decryption with streaming and progress tracking
+
+Provides file encryption/decryption with memory-efficient streaming,
+optional compression, and batch operations for multiple files.
 """
 
 import os
