@@ -1,3 +1,6 @@
+# CipherForge - Git Ignore Configuration
+# Prevents committing sensitive files and temporary artifacts
+
 # Python
 __pycache__/
 *.py[cod]
