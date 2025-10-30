@@ -1,6 +1,8 @@
 """
 CipherForge - Key Management Module
-Handles key derivation, generation, and storage
+
+Provides secure key derivation using Argon2id, random key generation,
+and key file management with proper permissions and encoding.
 """
 
 import os
