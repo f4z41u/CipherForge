@@ -34,8 +34,7 @@ def print_banner():
   ╚██████╗██║██║     ██║  ██║███████╗██║  ██║██║     ╚██████╔╝██║  ██║╚██████╔╝███████╗
    ╚═════╝╚═╝╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝      ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 {Style.RESET_ALL}
-{Fore.YELLOW}                    ⚔️  Advanced Encryption Tool with ChaCha20-Poly1305  ⚔️{Style.RESET_ALL}
-{Fore.WHITE}{Style.DIM}                              Forge Your Security, Encrypt Your Future{Style.RESET_ALL}
+{Fore.YELLOW}                      Advanced Encryption Tool with ChaCha20-Poly1305{Style.RESET_ALL}
 {Fore.MAGENTA}{Style.DIM}                                      Created by Fazalu Rahman{Style.RESET_ALL}
     """
     print(banner)
@@ -43,22 +42,22 @@ def print_banner():
 
 def print_success(message: str):
     """Print a success message"""
-    print(f"{Colors.SUCCESS}✓ {message}{Colors.RESET}")
+    print(f"{Colors.SUCCESS}[+] {message}{Colors.RESET}")
 
 
 def print_error(message: str):
     """Print an error message"""
-    print(f"{Colors.ERROR}✗ {message}{Colors.RESET}", file=sys.stderr)
+    print(f"{Colors.ERROR}[-] {message}{Colors.RESET}", file=sys.stderr)
 
 
 def print_warning(message: str):
     """Print a warning message"""
-    print(f"{Colors.WARNING}⚠ {message}{Colors.RESET}")
+    print(f"{Colors.WARNING}[!] {message}{Colors.RESET}")
 
 
 def print_info(message: str):
     """Print an info message"""
-    print(f"{Colors.INFO}ℹ {message}{Colors.RESET}")
+    print(f"{Colors.INFO}[*] {message}{Colors.RESET}")
 
 
 def print_header(message: str):
@@ -70,7 +69,7 @@ def print_header(message: str):
 
 def print_section(title: str):
     """Print a section title"""
-    print(f"\n{Colors.HIGHLIGHT}▶ {title}{Colors.RESET}")
+    print(f"\n{Colors.HIGHLIGHT}>> {title}{Colors.RESET}")
 
 
 def format_bytes(size: int) -> str:
@@ -125,7 +124,7 @@ def print_file_stats(stats: dict):
         print(f"  Decrypted Size: {format_bytes(stats['decrypted_size'])}")
     
     if 'was_compressed' in stats and stats['was_compressed']:
-        print(f"  Compression:    {Colors.SUCCESS}Detected and decompressed{Colors.RESET}")
+        print(f"  Compression:    Detected and decompressed")
 
 
 def prompt_password(prompt_text: str = "Enter password: ") -> str:
@@ -173,13 +172,13 @@ def print_batch_results(results: list[dict]):
     
     print_section("Batch Operation Results")
     print(f"  Total Files:    {len(results)}")
-    print(f"  {Colors.SUCCESS}Successful:     {len(successful)}{Colors.RESET}")
+    print(f"  Successful:     {len(successful)}")
     
     if failed:
-        print(f"  {Colors.ERROR}Failed:         {len(failed)}{Colors.RESET}")
+        print(f"  Failed:         {len(failed)}")
         print_section("Failed Files")
         for result in failed:
-            print(f"  {Colors.ERROR}✗{Colors.RESET} {result.get('input_file', 'unknown')}")
+            print(f"  [-] {result.get('input_file', 'unknown')}")
             print(f"    Error: {result.get('error', 'unknown error')}")
 
 
@@ -208,11 +207,11 @@ def print_key_generation_info():
     info = f"""
 {Colors.HEADER}Key Generation Information:{Colors.RESET}
 
-{Colors.INFO}•{Colors.RESET} A random 256-bit (32-byte) key will be generated
-{Colors.INFO}•{Colors.RESET} Store this key file in a secure location
-{Colors.INFO}•{Colors.RESET} Never share your key file with anyone
-{Colors.INFO}•{Colors.RESET} Losing the key means losing access to encrypted data
-{Colors.INFO}•{Colors.RESET} Consider backing up the key to a secure location
+- A random 256-bit (32-byte) key will be generated
+- Store this key file in a secure location
+- Never share your key file with anyone
+- Losing the key means losing access to encrypted data
+- Consider backing up the key to a secure location
     """
     print(info)
 
@@ -222,12 +221,12 @@ def print_encryption_info():
     info = f"""
 {Colors.HEADER}Encryption Details:{Colors.RESET}
 
-{Colors.INFO}•{Colors.RESET} Algorithm:     ChaCha20-Poly1305 (AEAD)
-{Colors.INFO}•{Colors.RESET} Key Size:      256 bits
-{Colors.INFO}•{Colors.RESET} Authentication: Poly1305 MAC
-{Colors.INFO}•{Colors.RESET} Key Derivation: Argon2id
-{Colors.INFO}•{Colors.RESET} Nonce:         96 bits (random, per encryption)
-{Colors.INFO}•{Colors.RESET} Security:      Military-grade encryption
+- Algorithm:     ChaCha20-Poly1305 (AEAD)
+- Key Size:      256 bits
+- Authentication: Poly1305 MAC
+- Key Derivation: Argon2id
+- Nonce:         96 bits (random, per encryption)
+- Security:      Military-grade encryption
     """
     print(info)
 
