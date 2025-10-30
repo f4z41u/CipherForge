@@ -326,17 +326,17 @@ def info():
     
     print_section("Features")
     features = [
-        "✓ ChaCha20-Poly1305 authenticated encryption",
-        "✓ Argon2id password-based key derivation",
-        "✓ Optional compression (zlib)",
-        "✓ Batch file operations",
-        "✓ Key file generation and management",
-        "✓ Tamper detection via authentication tags",
-        "✓ Secure random nonce generation",
-        "✓ Memory-efficient file handling"
+        "ChaCha20-Poly1305 authenticated encryption",
+        "Argon2id password-based key derivation",
+        "Optional compression (zlib)",
+        "Batch file operations",
+        "Key file generation and management",
+        "Tamper detection via authentication tags",
+        "Secure random nonce generation",
+        "Memory-efficient file handling"
     ]
     for feature in features:
-        print(f"  {Colors.SUCCESS}{feature}{Colors.RESET}")
+        print(f"  - {feature}")
     
     print_section("Usage Examples")
     examples = f"""
